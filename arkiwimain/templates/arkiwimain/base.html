@@ -1,0 +1,52 @@
+<em></em>{% load staticfiles %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd"><html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'arkiwimain/style.css' %}" />
+    <title>{% block title %}arKiwi{% endblock %}</title>
+        {% block headmenu %}
+        <div id="topmenu1">
+			<div id="topmenu11left">
+                <a href="/"><img src="{% static 'arkiwimain/images/arkiwi.png' %}" width="50" height="50" align="middle" style="padding:5px"></a>
+			</div>
+            <div id="topmenu11right">
+                <div id="topmenu11rightitem">
+                    <ul>
+                        <li><a href="/">...</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="topmenu11right">
+                <div id="topmenu11rightitem">
+                    <ul>
+                        <li><a href="/detail/">edit</a></li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+        <div id="sidemenu1">
+            <div id="sidemenu11">
+                <ul>
+                    <li><a href="/">People</a></li>
+                    <li><a href="/">Places</a></li>
+                    <li><a href="/">Dates</a></li>
+                </ul>            
+            </div>
+        </div>
+        {% endblock %}
+</head>
+
+<body>
+    <div id="maincontent">
+        {% block maincontent %}
+        {% endblock %}
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
