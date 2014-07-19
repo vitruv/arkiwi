@@ -60,10 +60,10 @@ WSGI_APPLICATION = 'arkiwialpha.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', #django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'aktest2',                      # Or path to database file if using sqlite3.
+        'NAME': 'aktest',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'pc',
-        'PASSWORD': 'lm',
+        'USER': 'joelbaur',
+        'PASSWORD': 'acaCc!130309',
         'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
@@ -87,5 +87,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/Users/pc/Webdev/arkiwialpha/media/'
+MEDIA_ROOT = '/Users/joelbaur/09_Universitaet/ETHZ/MA_II/4_WFA_CAAD/3_dev/arkiwialpha/media/'
 MEDIA_URL = '/media/'
