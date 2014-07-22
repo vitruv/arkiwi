@@ -1,53 +1,55 @@
-<em></em>{% load staticfiles %}
+{% load staticfiles %}
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-       "http://www.w3.org/TR/html4/loose.dtd"><html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en" ng-app="galaxymodule">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'arkiwimain/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'arkiwimain/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'arkiwimain/css/galery.css' %}" />
+    <link data-require="bootstrap-css@3.x" data-semver="3.0.3" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+
+
     <title>{% block title %}arKiwi{% endblock %}</title>
-        {% block headmenu %}
-        <div id="topmenu1">
-			<div id="topmenu11left">
-                <a href="/"><img src="{% static 'arkiwimain/images/arkiwi.png' %}" width="50" height="50" align="middle" style="padding:5px"></a>
+    {% block meta %}{% endblock %}
+
+        <div id="mainmenucontainer">
+
+			<div class="menutopbox">
+                <a href="{% url "index"%}"><img src="{% static 'arkiwimain/images/arkiwi.png' %}" width="100%" height="100%" align="middle"></a>
 			</div>
-            <div id="topmenu11right">
-                <div id="topmenu11rightitem">
-                    <ul>
-                        <li><a href="/">...</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="topmenu11right">
-                <div id="topmenu11rightitem">
-                    <ul>
-                        <li><a href="/detail/">edit</a></li>
-                    </ul>
-                </div>
-            </div>
+
+            <ul class="menutopbox">
+                    <li><a href="{% url "index"%}">arkiwi</a>
+                        <ul>
+                            <li><a href="{% url "index"%}" class="submenu-item">about</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url "index"%}">search</a></li>
+                    <li><a href="{% url "detail"%}">edit</a></li>
+                    <li><a href="{% url "djangulartests"%}">js-tests</a></li>
+                    <li><a href="{% url "index"%}">login</a></li>
+            </ul>
+
 		</div>
-        <div id="sidemenu1">
-            <div id="sidemenu11">
-                <ul>
-                    <li><a href="/">People</a></li>
-                    <li><a href="/">Places</a></li>
-                    <li><a href="/">Dates</a></li>
-                    <li><a href="/">Typologies</a></li>
-                </ul>            
-            </div>
-        </div>
-        {% endblock %}
 </head>
 
 <body>
-    <div id="maincontent">
-        {% block maincontent %}
-        {% endblock %}
-    </div>
-    <div id="content">
+    <div id="galerycontainer">
+    <div>
         {% block content %}
         {% endblock %}
     </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.js"></script>
+    <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="{% static 'arkiwimain/js/arkangular.js' %}"></script>
+
+
 </body>
 
 </html>

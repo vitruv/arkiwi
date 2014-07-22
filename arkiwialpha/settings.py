@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+STATICFILES_DIRS = (
+    "/Users/joelbaur/09_Universitaet/ETHZ/MA_II/4_WFA_CAAD/3_dev/arkiwialpha/arkiwimain/static",
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -60,10 +62,13 @@ WSGI_APPLICATION = 'arkiwialpha.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', #django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'aktest2',                      # Or path to database file if using sqlite3.
+        #'NAME': 'aktest2',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'pc',
-        'PASSWORD': 'lm',
+        #'USER': 'pc',
+        #'PASSWORD': 'lm',
+        'NAME': 'aktest',
+        'USER': 'joelbaur',
+        'PASSWORD': 'acaCc!130309',
         'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
@@ -86,6 +91,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/Users/pc/Webdev/arkiwialpha/media/'
+#MEDIA_ROOT = '/Users/pc/Webdev/arkiwialpha/media/'
+MEDIA_ROOT = '/Users/joelbaur/09_Universitaet/ETHZ/MA_II/4_WFA_CAAD/3_dev/arkiwialpha/media/'
 MEDIA_URL = '/media/'

@@ -12,7 +12,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
     url(r'^detail/', views.detail, name='detail'),
-    url(r'^home/', views.home, name='home'),
+    url(r'^search/', views.search, name='search'),
+    url(r'^djangulartests/', views.djangulartests, name='djangulartests'),
     url(r'^thanks/', views.thanks, name='thanks'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

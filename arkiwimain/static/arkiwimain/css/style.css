@@ -1,0 +1,44 @@
+head {
+	font: normal 15px Verdana;
+}
+
+body {
+	font: normal 12px Verdana;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
+
+#mainmenucontainer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	top: 0px;
+    width: 60px;
+	clear: both;
+    background-color:#000;
+    z-index: 1000;
+}
+
+ul.menutopbox {margin: 5px; display: block;}
+ul.menutopbox li a {width:50px; display: block; text-align: center; text-decoration: none; margin-top:10px; word-wrap:break-word;}
+ul.menutopbox > li:hover {cursor:pointer; border: 1px solid #666; border-bottom: 1px solid #fff;}
+ul.menutopbox li:hover {background: #ccc; border: 1px solid #999;}
+ul.menutopbox > li {display: inline-block; position: relative;}
+ul.menutopbox > li ul {z-index:1000; display: none; position: absolute; left: 60px; width: 150px; margin-top: 1px;}
+ul.menutopbox > li:hover ul {display: block;}
+ul.menutopbox > li ul li {display: block;} 
+
+
+.cart-item.ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  background-color: yellow;
+}
+
+.cart-item.ng-enter-active {
+  background-color: white;
+}

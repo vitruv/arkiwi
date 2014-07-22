@@ -1,23 +1,23 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
+from django.conf import settings
+from django.core.files.base import ContentFile
 
 from arkiwimain.models import Project
 from arkiwimain.forms import ImageUploadForm
 
-from django.http import HttpResponseRedirect
-from django.http import HttpResponse
-
 from PIL import Image as PImage
+
 import os
 from os.path import join as pjoin
-
-from django.conf import settings
 
 import StringIO
 
 from tempfile import NamedTemporaryFile
 
 from cStringIO import StringIO
-from django.core.files.base import ContentFile
 
 from math import ceil
 
@@ -27,10 +27,11 @@ def index(request):
     context = {'project_list': project_list}
     return render(request, 'arkiwimain/index.html', context)
 
-def home(request):
-    project_list = Project.objects.all()
-    context = {'project_list': project_list}
-    return render(request, 'arkiwimain/home.html', context)
+def djangulartests(request):
+    return render(request, 'arkiwimain/djangulartests.html')
+
+def search(request):
+    return render(request, 'arkiwimain/search.html')
     
 def detail(request):
     
@@ -110,3 +111,11 @@ def detail(request):
     
 def thanks(request):
     return HttpResponse("Thanks bro")
+
+class ContactFormView(TemplateView):
+    template = 'djangulartests.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ContactFormView, self).get_context_data(**kwargs)
+        context.update(contact_form=ContactForm())
+        return context
