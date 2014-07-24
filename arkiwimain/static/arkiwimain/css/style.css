@@ -17,10 +17,10 @@ ul {
 	bottom: 0px;
 	left: 0px;
 	top: 0px;
-    width: 60px;
+  width: 60px;
 	clear: both;
-    background-color:#000;
-    z-index: 1000;
+  background-color:#000;
+  z-index: 1000;
 }
 
 ul.menutopbox {margin: 5px; display: block;}
